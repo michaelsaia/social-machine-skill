@@ -1,0 +1,58 @@
+#!/usr/bin/env bash
+# Social Machine setup — register skills with Claude Code
+set -e
+
+SM_DIR="$(cd "$(dirname "$0")" && pwd)"
+SKILLS_DIR="$(dirname "$SM_DIR")"
+SKILL_SOURCE="$SM_DIR/skills/social-machine"
+
+# If cloned directly into ~/.claude/skills/social-machine-skill, use that layout
+# If cloned elsewhere and run manually, create symlinks
+SKILLS_BASENAME="$(basename "$SKILLS_DIR")"
+
+echo "Social Machine — Setup"
+echo ""
+
+# 1. Ensure Pillow venv for watermarking (lightweight, no user action needed)
+if [ ! -d /tmp/meme-tools ]; then
+  echo "Setting up image tools..."
+  python3 -m venv /tmp/meme-tools 2>/dev/null && /tmp/meme-tools/bin/pip install -q Pillow 2>/dev/null
+  echo "  Done."
+fi
+
+# 2. Create skill symlinks if we're inside a skills directory
+if [ "$SKILLS_BASENAME" = "skills" ]; then
+  # We're at ~/.claude/skills/social-machine-skill (or similar)
+  # Symlink the main skill
+  MAIN_TARGET="$SKILLS_DIR/social-machine"
+  if [ -d "$SKILL_SOURCE" ]; then
+    if [ -L "$MAIN_TARGET" ] || [ ! -e "$MAIN_TARGET" ]; then
+      ln -snf "$(basename "$SM_DIR")/skills/social-machine" "$MAIN_TARGET"
+    fi
+  fi
+
+  # Symlink sub-skills for direct slash command access
+  linked=()
+  for subskill in config scan research ideate meme stock design capture post video; do
+    sub_source="$SKILL_SOURCE/$subskill"
+    sub_target="$SKILLS_DIR/social-$subskill"
+    if [ -d "$sub_source" ]; then
+      if [ -L "$sub_target" ] || [ ! -e "$sub_target" ]; then
+        ln -snf "$(basename "$SM_DIR")/skills/social-machine/$subskill" "$sub_target"
+        linked+=("social-$subskill")
+      fi
+    fi
+  done
+
+  echo "Social Machine ready."
+  if [ ${#linked[@]} -gt 0 ]; then
+    echo "  Linked skills: ${linked[*]}"
+  fi
+else
+  echo "Social Machine ready."
+  echo "  (Skipped skill symlinks — not inside ~/.claude/skills/)"
+  echo "  Run: ./scripts/install.sh to create symlinks manually."
+fi
+
+echo ""
+echo "Run /social in any project to get started."
