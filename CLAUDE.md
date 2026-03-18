@@ -14,7 +14,9 @@ social-machine-skill/
 │   ├── ideate/SKILL.md          # /social-ideate (content ideas + captions)
 │   ├── design/                  # /social-design (graphics creation)
 │   │   ├── SKILL.md
-│   │   └── providers/           # Swappable graphics providers
+│   │   └── providers/           # Swappable graphics providers + meme-layouts.md
+│   ├── meme/SKILL.md            # /social-meme (meme engine + trend scouting)
+│   ├── stock/SKILL.md           # /social-stock (royalty-free images)
 │   ├── capture/SKILL.md         # /social-capture (screenshots)
 │   ├── post/                    # /social-post (publishing)
 │   │   ├── SKILL.md
@@ -47,8 +49,17 @@ social-machine-skill/
 
 ### Graphics Providers
 - `design/providers/html-screenshot.md` — PRIMARY: HTML/CSS → headless browser screenshot
+- `design/providers/memegen-api.md` — Real meme templates via memegen.link API (Drake, Expanding Brain, etc.)
+- `design/providers/meme-layouts.md` — HTML/CSS templates for custom meme formats (alignment charts, tweet cards, etc.)
 - `design/providers/figma.md` — Figma MCP integration
 - `design/providers/svg.md` — Pure SVG fallback
+
+### Utilities
+- `scripts/watermark.py` — Adds brand logo + @handle watermark to any image (requires Pillow in /tmp/meme-tools venv)
+
+### Meme Engine
+- `meme/SKILL.md` — Trend scouting, style transfer, meme concept generation
+- `design/providers/meme-layouts.md` — HTML/CSS templates for 10+ meme formats (drake, starter pack, expanding brain, tweet screenshot, hot take, this-or-that, alignment chart, etc.)
 
 ### Posting Providers
 - `post/providers/manual.md` — DEFAULT: save files for manual posting

@@ -30,12 +30,16 @@ Read `.social-machine/config.md` if it exists. If it does, show the current sett
 Ask the user which tool they want to use for creating graphics:
 
 Options:
-- **html-screenshot** (Recommended) — Claude generates HTML/CSS, headless browser screenshots it. Best brand precision, most portable. Works everywhere with a browser.
+- **html-screenshot** (Recommended) — Claude generates HTML/CSS, headless browser screenshots it. Best brand precision, most portable. Works everywhere with a browser. Also supports custom meme layouts (alignment charts, tweet cards, hot takes, etc.).
 - **figma** — Uses Figma MCP to create designs. Professional tool, requires Figma account + MCP configured.
 - **svg** — Pure SVG code generation. Zero dependencies but limited for complex layouts.
 - **powerpoint** — Generate PPTX files. Good for teams that use PowerPoint/Google Slides.
 
 Default: `html-screenshot`
+
+**Note:** The memegen API provider (real meme templates like Drake, Expanding Brain, etc.)
+is always available regardless of this setting. It's used automatically when `/social-meme`
+generates memes that need classic template imagery. This setting controls branded graphics only.
 
 ---
 
@@ -81,7 +85,28 @@ Default: `[x, instagram]`
 
 ---
 
-## Step 6: Auto-Post Setting
+## Step 6: Meme Content
+
+Ask the user if they want meme content as part of their social strategy:
+
+```
+Social Machine can generate meme content using real meme templates (Drake, Expanding Brain,
+Distracted Boyfriend, etc.) and custom meme formats (alignment charts, hot takes, tweet cards).
+
+Meme posts get ~60% organic engagement vs ~5% for standard branded graphics.
+They work best for consumer brands, dev tools, and casual/young audiences.
+They may NOT be appropriate for B2B enterprise, medical, legal, or highly regulated industries.
+```
+
+Options:
+- **Yes, include memes** (Recommended for most brands) — Meme content types will be suggested alongside standard content. `/social-meme` will be available.
+- **No memes** — Only standard branded content types (feature spotlight, quote card, tips, etc.). Meme formats will not be suggested.
+
+Default: `memes_enabled: true`
+
+---
+
+## Step 7: Auto-Post Setting
 
 Ask the user if they want automatic posting or confirmation before each post:
 
@@ -93,7 +118,7 @@ Default: `auto_post: false`
 
 ---
 
-## Step 7: Write Config File
+## Step 8: Write Config File
 
 Create `.social-machine/` directory if it doesn't exist.
 
@@ -107,6 +132,7 @@ posting_provider: {choice}
 posting_platforms:
   - {platform1}
   - {platform2}
+memes_enabled: {true/false}
 auto_post: {true/false}
 ---
 
@@ -117,7 +143,7 @@ auto_post: {true/false}
 
 ---
 
-## Step 8: Credentials Setup (if API posting selected)
+## Step 9: Credentials Setup (if API posting selected)
 
 If the user chose `api` as their posting provider:
 
@@ -145,7 +171,7 @@ TIKTOK_ACCESS_TOKEN=
 
 ---
 
-## Step 9: Confirm
+## Step 10: Confirm
 
 Show the user a summary of their configuration and confirm it looks correct.
 If they want changes, loop back to the relevant step.

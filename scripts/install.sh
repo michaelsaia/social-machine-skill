@@ -52,7 +52,7 @@ echo "Symlink created: $SKILL_TARGET -> $SKILL_SOURCE"
 
 # Create sub-skill symlinks for direct access
 # These allow running /social-scan, /social-research, etc. directly
-SUBSKILLS=("config" "scan" "research" "ideate" "design" "capture" "post" "video")
+SUBSKILLS=("config" "scan" "research" "ideate" "meme" "stock" "design" "capture" "post" "video")
 
 for subskill in "${SUBSKILLS[@]}"; do
     SUB_TARGET="$SKILLS_DIR/social-$subskill"
@@ -77,6 +77,8 @@ echo "  /social-scan    — Scan project for brand identity"
 echo "  /social-research — Research current trends"
 echo "  /social-ideate  — Generate post ideas and captions"
 echo "  /social-design  — Create graphics"
+echo "  /social-meme    — Generate meme content from trending formats"
+echo "  /social-stock    — Find royalty-free stock images"
 echo "  /social-capture — Capture app screenshots"
 echo "  /social-post    — Publish content"
 echo "  /social-video   — Create video content (Phase 2)"

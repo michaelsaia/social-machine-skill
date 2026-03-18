@@ -78,44 +78,50 @@ Regardless of provider, the graphic MUST:
 4. **Be high quality** — clean, modern, professional
 5. **Be readable** — text must be large enough to read on mobile
 6. **Include branding** — logo or app name, subtly placed (bottom corner or small watermark)
+7. **Look like a graphic, NOT a website** — no buttons, no clickable-looking UI, no navigation. Think poster/flyer/magazine ad. Any call-to-action is plain text (e.g., "yoked.fitness"), never a styled button.
+8. **Incorporate stock images** if available in `.social-machine/output/stock/` — use as backgrounds with overlays, contained elements, or accent imagery
 
 ### Content Type Visual Guidelines
 
 **Feature Spotlight:**
-- App screenshot as hero visual (centered or offset)
+- App screenshot as hero visual (centered or offset) in a device mockup frame
 - Overlay headline text on a semi-transparent branded banner
 - Subtle gradient or branded background behind screenshot
-- Optional: device mockup frame around screenshot
+- The screenshot itself is the "proof" — let it be the star
+- Small website URL or handle as text at the bottom — NOT a button
 
 **Quote Card:**
 - Bold, large text centered on branded background
 - Quote marks or decorative elements in brand accent color
 - Author attribution if applicable
 - Clean, minimal design — let the words breathe
+- Optional: relevant stock photo as background with dark overlay and text on top
 
 **Stat / Metric Graphic:**
 - HUGE number as the focal point (largest text element)
 - Supporting context text below in smaller size
 - Brand accent color for the number
 - Optional: simple chart or icon related to the metric
+- Optional: stock photo of someone working out as background with overlay
 
 **Before / After:**
 - Split design: left side "before", right side "after"
 - Clear labels for each side
 - Divider line or diagonal split in brand color
 - Consistent framing for both sides
+- Great place for stock fitness photography on one or both sides
 
 **Tip / How-To:**
 - Numbered steps or bullet points, clearly formatted
 - Each step gets its own visual row/section
-- Icons or small illustrations per step if possible
+- Icons, emojis, or small stock images per step
 - Header with the tip topic
 
 **Announcement:**
 - Bold headline — the news
 - Supporting details in smaller text
 - Energetic/celebratory feel (gradients, accent colors)
-- CTA button visual (e.g., "Try it now" badge)
+- Website URL or app store mention as plain text — NOT a button
 
 **Testimonial Card:**
 - Large quote text
@@ -123,6 +129,17 @@ Regardless of provider, the graphic MUST:
 - User name/attribution
 - App icon or logo
 - Warm, trustworthy colors
+- Optional: stock photo of a person or gym setting as background with overlay
+
+**Meme / Trending Format:**
+- Load meme-specific layout patterns from `design/providers/meme-layouts.md`
+- Match the meme format specified in the ideation brief (drake, starter pack, expanding brain, etc.)
+- Use the appropriate CSS layout template from meme-layouts.md
+- Follow the Lo-Fi Factor from the brief (1=polished brand meme, 3=well-made meme, 5=raw)
+- Brand colors are OPTIONAL for memes — some formats work better with simple black/white
+- Keep text readable at thumbnail size — this is even more critical for memes
+- Logo/branding should be MINIMAL — small handle at most. Over-branding kills meme shareability
+- If the meme uses stock photos or app screenshots, incorporate them naturally into the format
 
 ---
 

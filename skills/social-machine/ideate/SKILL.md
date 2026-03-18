@@ -86,6 +86,14 @@ PHASE 1 CONTENT TYPES:
    - User quote or review
    - Best for: social proof, trust building
    - Visual: quote text with stars/rating + user attribution
+
+8. MEME / TRENDING FORMAT
+   - Adapted trending meme format or niche humor
+   - Best for: engagement, shares, reach, community building
+   - Visual: format-specific (drake comparison, starter pack, expanding brain, etc.)
+   - NOTE: For meme content, defer to `/social-meme` for trend scouting and
+     style transfer. Memes get 60% organic engagement vs 5% for regular graphics.
+     Use the meme engine when variety check suggests entertainment content.
 ```
 
 Present your recommendation with rationale. If the user has a specific idea, adapt to that instead.

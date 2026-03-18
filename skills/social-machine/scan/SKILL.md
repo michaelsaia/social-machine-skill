@@ -129,7 +129,7 @@ Some things can't be extracted from code. Use AskUserQuestion for each:
 
 3. **Competitors:** "Who are 2-3 direct competitors? (This helps with trend research and differentiation)"
 
-4. **Current social handles:** If not found in code, ask: "What are your social media handles? (e.g., @yokedapp on Instagram, Twitter, TikTok)"
+4. **Current social handles:** If not found in code, ask: "What are your social media handles? (e.g., @myapp on Instagram, X, TikTok)"
 
 ---
 

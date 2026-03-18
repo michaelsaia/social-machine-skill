@@ -51,7 +51,29 @@ Create a self-contained HTML file at `.social-machine/output/{date}_{content_typ
 </html>
 ```
 
-### Design Principles for HTML Graphics
+### CRITICAL: This Is a Graphic, NOT a Website
+
+You are designing a **static image for social media** — like a poster, flyer, or magazine ad. This will be screenshotted and posted as a PNG. Nobody will click on it, hover over it, or interact with it.
+
+**NEVER include:**
+- Buttons or CTAs that look clickable (no "Try it free →" buttons with hover states)
+- Navigation bars, menus, or header/footer UI
+- Input fields, forms, or any interactive-looking elements
+- Underlined text that looks like hyperlinks
+- Drop-down menus or toggles
+- Anything that makes the viewer think "why can't I click this?"
+
+**Instead, use these graphic design conventions:**
+- Text-based CTAs as simple lines of text: "Available on the App Store" or "yoked.fitness" — NOT styled as a button
+- Hashtags or handles as plain text at the bottom
+- QR codes if you want a scannable action (but only if the user requests it)
+- The website URL as subtle branding text, not a clickable-looking element
+
+Think **Instagram graphic / poster / billboard** — not landing page.
+
+---
+
+### Design Principles for Social Media Graphics
 
 1. **Use CSS gradients liberally** — they make flat designs pop
    ```css
@@ -73,22 +95,39 @@ Create a self-contained HTML file at `.social-machine/output/{date}_{content_typ
    - Accents: accent color for highlights, borders, decorative elements
    - Never use more than 3-4 colors total
 
-5. **Modern design patterns:**
+5. **Modern graphic design patterns:**
    - Rounded corners (`border-radius: 16-24px`) on cards and containers
    - Subtle shadows (`box-shadow: 0 20px 60px rgba(0,0,0,0.15)`)
    - Glass morphism for overlays (`backdrop-filter: blur(20px); background: rgba(255,255,255,0.1)`)
    - Gradient text for headlines (`background-clip: text; -webkit-text-fill-color: transparent`)
+   - Decorative shapes (circles, lines, abstract blobs) for visual interest
+   - Layered elements with depth (overlapping text on images, offset cards)
 
 6. **Logo/branding placement:**
    - Small logo in bottom-right or bottom-center
    - Size: ~40-60px height
    - Can use the app icon image: `<img src="{absolute_path_to_icon}">`
    - If no logo image: use text logo with brand font styling
+   - Website URL as small, subtle text near the logo — NOT as a button
 
-7. **For app screenshots:**
+7. **Stock photography integration:**
+   - If stock images are available in `.social-machine/output/stock/`, embed them
+   - Use as full background with text overlay (add dark overlay for readability)
+   - Use as contained element within the design (in a circle cutout, phone frame, etc.)
+   - Always apply brand color overlays or tints to keep images on-brand
+   - Use `object-fit: cover` and `object-position` for proper cropping
+
+8. **For app screenshots:**
    - Embed as `<img>` with absolute file path
    - Add device mockup frame via CSS (rounded corners, shadow, status bar)
    - Scale to fit within the design (max 60% of canvas width)
+   - Screenshots are visual evidence of the product — they should feel like a peek inside the app, not a UI demo
+
+9. **Visual hierarchy for graphics (not websites):**
+   - One dominant element (big headline OR hero image — not both competing)
+   - Supporting text is secondary — smaller, lighter weight
+   - Brand mark is tertiary — small, unobtrusive
+   - The viewer should "get it" in under 2 seconds
 
 ### Responsive Layout Strategy
 
